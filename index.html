@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DEPS.BR</title>
+  <link rel="icon" href="img/D_logo.png">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#"><img src="img/depslogo.png" alt="Logo letrada DEPS.BR" title="Logo Letra" id="LogoLetra"></a>
+
+      <ul>
+        <li class="menuitem"><a href="#deputados" title="Menu - Deputados">DEPUTADOS</a></li>
+        <li class="menuitem"><a href="#noticias" title="Menu - Notícias">NOTÍCIAS</a></li>
+        <li class="menuitem"><a href="#eventos" title="Menu - Eventos">EVENTOS</a></li>
+        <li class="menuitem"><a href="#contato" title="Menu - Contato">CONTATO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="backgroundImg">
+      <section class="sessaoinicio">
+        <h2>REPRESENTANTES, NOTÍCIAS E EVENTOS DA CÂMARA</h2>
+        <h1>CONHEÇA OS DEPUTADOS</h1>
+
+        <div id="botaoMaluco">
+          <a href="#deputados" id="btnDEPUTADOS">PESQUISAR</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="sessaoDeputados">
+      <div>
+        <div class="barrinha">
+          <h2 id="deputados">DEPUTADOS</h2>
+        </div>
+        <p id="pDeputados">Consulte aqui os deputados da legislatura atual:</p>
+
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Nome do deputado">
+          <button id="searchButton">BUSCAR</button>
+        </div>
+
+        <div id="deputadosContainer" class="deputados-container"></div>
+      </div>
+    </section>
+
+    <section class="sessaoNoticias">
+      <div class="englobaNoticias">
+        <div class="barrinha">
+          <h2 id="noticias">NOTÍCIAS</h2>
+        </div>
+
+        <div class="noticias_container">
+          <div class="img_noticias">
+            <img
+              src="https://www.gov.br/pt-br/noticias/meio-ambiente-e-clima/2023/08/fundo-amazonia-dinamarca-anuncia-doacao-de-r-110-milhoes/fundo-amazonia.jpeg/@@images/0792e4c3-52e7-46de-9506-bffb986537ae.jpeg"
+              alt="Ministra Marina Silva recebe ministro de Cooperação para o Desenvolvimento e Política Climática Global da Dinamarca"
+              title="Desenvolvimento e Política Climática Global da Dinamarca" id="imgNoticia1">
+          </div>
+
+          <div class="textos_container">
+            <div class="texto_noticias">
+              <h3>Fundo Amazônia: Dinamarca anuncia doação de R$ 110 milhões</h3>
+              <p>O governo da Dinamarca anunciou a doação de 150 milhões de coroas dinamarquesas (cerca de R$ 110
+                milhões) para o Fundo Amazônia. O anúncio foi feito na terça-feira (29/8), após reunião da ministra
+                Marina Silva (Meio Ambiente) com o ministro de Cooperação para o Desenvolvimento e Política Climática
+                Global dinamarquês</p>
+              <p id=fonte_1>Fonte: Agência Câmara de Notícias / 30/08/2023 - 15h08</p>
+            </div>
+
+            <div class="vejamais">
+              <a href="https://www.gov.br/pt-br/noticias/" target="_blank" title="Veja mais notícias">VEJA MAIS
+                NOTÍCIAS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sessaoEventos">
+      <div class="englobaEventos">
+        <div class="barrinha">
+          <h2 id="eventos">EVENTOS</h2>
+        </div>
+        <p id="pEventos">Consulte aqui os eventos agendados:</p>
+
+        <div class="container_eventos">
+          <div class="search-container">
+            <input type="text" id="descricaoEvento" placeholder="Descrição Evento">
+            <input type="date" id="dataEvento">
+            <button id="buscarBtn">BUSCAR</button>
+          </div>
+
+          <div id="eventosList" class="eventos-list">
+
+          </div>
+
+          <button id="eventosSemanaBtn">EVENTOS DO DIA</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sessaoContato">
+      <div>
+        <div class="barrinha">
+          <h2 id="contato">CONTATO</h2>
+        </div>
+
+        <div class="contato_container">
+          <div class="formulario">
+            <form id="formContato">
+
+              <input type="text" id="nome" name="nome" placeholder="Nome" required><br><br>
+
+              <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+
+              <textarea placeholder="Mensagem" id="mensagem" name="mensagem" maxlength="500"
+                required></textarea><br><br>
+              <div id="counter">500 caracteres restantes</div>
+
+              <button type="submit" id="enviar">ENVIAR</button>
+            </form>
+          </div>
+
+          <div class="informacoes">
+            <h3>Fale Conosco</h3>
+            <p>Deixe-nos suas críticas, elogios e sugestões!</p>
+            <p>Lorem ipsum dolor sit amet. Aut tenetur repudiandae quo Quis culpa ut accusantium nisi aut unde ullam sed
+              distinctio iste aut labore perspiciatis aut accusantium facere.</p>
+            <p>Qui praesentium consequatur est debitis ipsa ea officiis ipsa vel quaerat doloribus ut perspiciatis
+              reiciendis est sunt saepe non harum iste.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Instituto Infnet — Assessment Interfaces Web</p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

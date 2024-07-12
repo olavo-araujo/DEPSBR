@@ -1,0 +1,786 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: grey;
+}
+
+#deputados {
+  scroll-margin-top: 105px;
+}
+
+#contato {
+  scroll-margin-top: 50px;
+}
+
+#eventos,
+#noticias {
+  scroll-margin-top: 100px;
+}
+
+nav {
+  list-style: none;
+  background-color: white;
+  justify-content: space-around;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0px 6px 6px -6px rgba(0, 0, 0, 0.1);
+  font-family: "PT Sans", sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0d2c5e;
+}
+
+nav li:hover a {
+  color: #0f3676;
+  transition: 0.3s;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  gap: 30px;
+  border: 1px solid white;
+}
+
+.menuitem {
+  display: inline-block;
+  margin-right: 25px;
+  position: relative;
+}
+
+#LogoLetra {
+  margin-top: 20px;
+  width: 130px;
+  max-width: 130px;
+  max-height: 130px;
+}
+
+#backgroundImg {
+  margin-top: 80px;
+  background-image: url(img/backgroundinicio.png);
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.sessaoinicio {
+  display: flex;
+  width: calc(100%);
+  height: 100vh;
+  margin-left: -30px;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.sessaoinicio h1 {
+  margin-top: -15px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: -30px;
+}
+
+#botaoMaluco {
+  display: block;
+  width: 200px;
+  height: 50px;
+}
+
+.sessaoinicio a {
+  margin-left: -2px;
+  display: inline-block;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  background: #0d2c5e;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 20px;
+  padding-left: 90px;
+  padding-right: 90px;
+  box-shadow: 0 0 10px rgb(255, 255, 255, 1);
+  color: white;
+}
+
+#botaoMaluco a:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+.sessaoinicio h2 {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 200;
+  font-size: 30px;
+  color: white;
+  margin-top: 330px;
+  margin-left: 50px;
+}
+
+#btnDEPUTADOS {
+  margin-top: 30px;
+}
+
+.sessaoDeputados {
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#deputados {
+  font-size: 2.5em;
+  color: #0d2c5e;
+}
+
+.barrinha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barrinha::before,
+.barrinha::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #0d2c5e;
+  margin: 0 10px;
+}
+
+.barrinha::before {
+  margin-right: 20px;
+}
+
+.barrinha::after {
+  margin-left: 20px;
+}
+
+#pDeputados {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+#pdetalhes {
+  color: #999999;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  font-size: 1em;
+  width: 50%;
+  max-width: 400px;
+  margin-right: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#searchButton {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-bottom: 18px;
+  background-color: #0d2c5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+.deputados-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.deputado-card {
+  background-color: #fbfbfb;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.deputado-card img {
+  width: 210px;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.deputado-card h3 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  font-family: "Urbanist", sans-serif;
+  font-weight: bold;
+  margin-top: -10px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  border-radius: 0 0 5px 5px;
+  background-color: #051124;
+  color: white;
+}
+
+#ppartido {
+  font-size: 15px;
+}
+
+.deputado-card p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.deputado-card .detalhes {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #666;
+  text-align: left;
+}
+
+.sessaoNoticias {
+  font-family: "PT Sans", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 530px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#noticias {
+  font-size: 2.5em;
+  color: #0d2c5e;
+}
+
+.noticias_container {
+  margin-top: 30px;
+  display: flex;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  height: 400px;
+  text-align: center;
+}
+
+.img_noticias {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  overflow: hidden;
+  width: 550px;
+  height: 360px;
+  border-radius: 10px;
+}
+
+.texto_noticias {
+  margin-top: 60px;
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.texto_noticias h3 {
+  max-width: 500px;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.texto_noticias p {
+  text-align: justify;
+}
+
+#fonte_1 {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.vejamais {
+  margin-top: 40px;
+}
+
+.vejamais a {
+  background-color: #001f3f;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-right: 20px;
+  padding-left: 185px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 185px;
+  border-radius: 5px;
+}
+
+.vejamais a:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+#imgNoticia1 {
+  justify-items: center;
+  width: 550px;
+  max-height: 360px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#imgNoticia1:hover {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}
+
+.sessaoEventos {
+  font-family: "PT Sans", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  transition: height 1s ease;
+  padding-bottom: 50px;
+}
+
+#eventos {
+  font-size: 2.5em;
+  color: #0d2c5e;
+}
+
+#pEventos {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.englobaEventos {
+  width: 1100px;
+}
+
+.container_eventos {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-bottom: 30px;
+}
+
+input[type="date"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 600px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#eventosSemanaBtn {
+  padding: 10px 150px;
+  font-size: 14px;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#eventosSemanaBtn:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+button:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+.eventos-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.evento-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.evento-item h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.evento-item p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.sessaoContato {
+  font-family: "PT Sans", sans-serif;
+  background-color: white;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#contato {
+  font-size: 2.5em;
+  color: #0d2c5e;
+}
+
+.contato_container {
+  margin-top: 30px;
+  display: flex;
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  min-width: 1100px;
+  height: 430px;
+  text-align: center;
+  padding: 20px;
+}
+
+#enviar {
+  background-color: #001f3f;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-right: 20px;
+  padding: 5px 250px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+#enviar:hover {
+  background-color: #0f3676;
+  transition: 0.3s;
+}
+
+#nome {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 600px;
+}
+
+#email {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 600px;
+}
+
+#mensagem {
+  font-family: "PT Sans", sans-serif;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 600px;
+  height: 200px;
+  resize: none;
+  margin-bottom: -15px;
+}
+
+#counter {
+  font-size: 12px;
+  color: #555;
+  text-align: right;
+}
+
+.informacoes {
+  margin: 20px;
+  text-align: justify;
+  max-width: 600px;
+}
+
+.informacoes h3 {
+  font-size: 25px;
+}
+
+.informacoes p {
+  margin-top: 20px;
+}
+
+footer {
+  font-family: "PT Sans", sans-serif;
+  width: 100%;
+  height: 100px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #001f3f;
+}
+
+footer p {
+  font-size: 15px;
+}
+
+@media(max-width: 425px) {
+  body {
+    width: 100%;
+    background-color: white;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .sessaoinicio {
+    display: flex;
+    width: 100%;
+  }
+
+  .sessaoinicio a {
+    font-size: 12px;
+  }
+
+  .sessaoinicio h2 {
+    margin-top: 250px;
+    font-size: 13px;
+  }
+
+  .sessaoinicio h1 {
+    width: 100%;
+    font-size: 45px;
+    margin-top: 0px;
+    margin-bottom: -10px;
+    margin-left: 50px;
+  }
+
+  #deputadosContainer {
+    margin-top: 40px;
+  }
+  
+  .sessaoDeputados {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+  .sessaoNoticias {
+    height: 950px;
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: -50px;
+  }
+  
+  .noticias_container {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 730px;
+    width: 95%;
+  }
+
+  .textos_container {
+    margin-top: -380px;
+    margin-left: 20px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img_noticias {
+    margin-top: -150px;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  #imgNoticia1 {
+    margin-top: -40px;
+    width: 350px;
+    margin-bottom: -10px;
+  }
+  
+  .englobaNoticias {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .vejamais a {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  
+  .sessaoEventos {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: -20px;
+    padding: 0;
+  }
+  
+  .search-container {
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: -20px;
+  }
+  
+  .englobaEventos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #eventosSemanaBtn {
+    display: none;
+  }
+  
+  #descricaoEvento {
+    align-items: center;
+    width: 80%;
+  }
+
+  #dataEvento {
+    width: 80%;
+  }
+
+  .container_eventos {
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    padding: 0;
+  }
+  
+  .sessaoContato {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .informacoes {
+    display: none;
+  }
+
+  .contato_container {
+    max-width: 400px;
+    min-width: 400px;
+  
+  }
+  
+  .formulario {
+    
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    margin-left: 0px;
+  }
+
+  #counter {
+    margin-right: 20px;
+  }
+  
+  #nome, #email, #mensagem {
+    width: 90%;
+  }
+
+  #enviar {
+    background-color: #001f3f;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 20px;
+    padding: 5px 100px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+
+  #enviar:hover {
+    background-color: #0f3676;
+    transition: 0.3s;
+  }
+} 
